@@ -95,3 +95,10 @@ footer{
     color: white;
     margin-top: 20px;
 }
+
+a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px;
+}
