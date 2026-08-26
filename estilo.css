@@ -1,0 +1,299 @@
+/* ==========================================================
+   VARIÁVEIS DE CORES E CONFIGURAÇÕES GLOBAIS
+   ========================================================== */
+:root {
+  --bg-color: #0d0e12;
+  --card-bg: #16181e;
+  
+  /* Amarelo Neon como cor de destaque */
+  --primary-color: #ffcc00;
+  --primary-hover: #ffe066;
+  --primary-dark: #cca300;
+  
+  --text-color: #f0f0f5;
+  --text-muted: #a8a8b3;
+  --border-color: #29292e;
+  
+  /* Sombras Neon Amarelas Fluídas */
+  --shadow-neon: 0 4px 20px rgba(255, 204, 0, 0.25);
+  --shadow-neon-hover: 0 6px 28px rgba(255, 204, 0, 0.45);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+  
+  /* Transição Global Fluida */
+  --transition-fast: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Rolagem suave na página inteira */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ==========================================================
+   CABEÇALHO E NAVEGAÇÃO FLUIDA
+   ========================================================== */
+header {
+  background-color: rgba(22, 24, 30, 0.85);
+  backdrop-filter: blur(12px); /* Efeito de vidro desfocado */
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow-neon);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  transition: var(--transition-smooth);
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: var(--transition-fast);
+  display: inline-block;
+}
+
+nav a:hover {
+  color: var(--text-color);
+  background-color: rgba(255, 204, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+nav a.active {
+  background-color: var(--primary-color);
+  color: #0d0e12; /* Texto escuro no fundo amarelo para bom contraste */
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+}
+
+/* ==========================================================
+   CONTEÚDO PRINCIPAL & CARDS INTERATIVOS
+   ========================================================== */
+main {
+  max-width: 920px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  min-height: 75vh;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 2rem;
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 204, 0, 0.4);
+  box-shadow: var(--shadow-card), 0 0 20px rgba(255, 204, 0, 0.15);
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.5px;
+}
+
+p {
+  margin-bottom: 1.2rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ==========================================================
+   FORMULÁRIO DE CONTATO MODERNO
+   ========================================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: #0f1015;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: var(--transition-fast);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.5);
+  background-color: #12141a;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: #0d0e12; /* Texto escuro para contraste */
+  border: none;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--shadow-neon);
+  transition: var(--transition-fast);
+  margin-top: 0.5rem;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+  box-shadow: var(--shadow-neon-hover);
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================
+   BOTÃO VOLTAR AO TOPO FLUIDO
+   ========================================================== */
+.btn-topo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1.5rem;
+  padding: 10px 18px;
+  background-color: rgba(255, 204, 0, 0.1);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition-fast);
+}
+
+.btn-topo:hover {
+  background-color: var(--primary-color);
+  color: #0d0e12;
+  box-shadow: var(--shadow-neon);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================
+   RODAPÉ
+   ========================================================== */
+footer {
+  background-color: var(--card-bg);
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 4rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  nav ul {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  nav a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+.galeria-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.galeria-item {
+  background-color: #0f1015;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+}
+
+.galeria-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-card), 0 0 20px rgba(255, 204, 0, 0.2);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: var(--transition-fast);
+}
+
+.galeria-item figcaption {
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  background-color: #12141a;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  font-weight: 500;
+}
