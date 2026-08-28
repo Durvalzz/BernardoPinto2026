@@ -1,11 +1,7 @@
-/* ==========================================================
-   VARIÁVEIS DE CORES E CONFIGURAÇÕES GLOBAIS
-   ========================================================== */
 :root {
   --bg-color: #0d0e12;
   --card-bg: #16181e;
   
-  /* Amarelo Neon como cor de destaque */
   --primary-color: #ffcc00;
   --primary-hover: #ffe066;
   --primary-dark: #cca300;
@@ -14,17 +10,14 @@
   --text-muted: #a8a8b3;
   --border-color: #29292e;
   
-  /* Sombras Neon Amarelas Fluídas */
   --shadow-neon: 0 4px 20px rgba(255, 204, 0, 0.25);
   --shadow-neon-hover: 0 6px 28px rgba(255, 204, 0, 0.45);
   --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
   
-  /* Transição Global Fluida */
   --transition-fast: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Rolagem suave na página inteira */
 html {
   scroll-behavior: smooth;
 }
@@ -43,12 +36,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ==========================================================
-   CABEÇALHO E NAVEGAÇÃO FLUIDA
-   ========================================================== */
 header {
   background-color: rgba(22, 24, 30, 0.85);
-  backdrop-filter: blur(12px); /* Efeito de vidro desfocado */
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 1rem 2rem;
   box-shadow: var(--shadow-neon);
@@ -95,14 +85,11 @@ nav a:hover {
 
 nav a.active {
   background-color: var(--primary-color);
-  color: #0d0e12; /* Texto escuro no fundo amarelo para bom contraste */
+  color: #0d0e12;
   font-weight: 600;
   box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
 }
 
-/* ==========================================================
-   CONTEÚDO PRINCIPAL & CARDS INTERATIVOS
-   ========================================================== */
 main {
   max-width: 920px;
   margin: 3rem auto;
@@ -139,9 +126,6 @@ p {
   font-size: 1.05rem;
 }
 
-/* ==========================================================
-   FORMULÁRIO DE CONTATO MODERNO
-   ========================================================== */
 form {
   display: flex;
   flex-direction: column;
@@ -175,7 +159,7 @@ input:focus, select:focus, textarea:focus {
 
 button[type="submit"] {
   background-color: var(--primary-color);
-  color: #0d0e12; /* Texto escuro para contraste */
+  color: #0d0e12;
   border: none;
   padding: 14px 20px;
   font-size: 1rem;
@@ -197,9 +181,6 @@ button[type="submit"]:active {
   transform: translateY(0);
 }
 
-/* ==========================================================
-   BOTÃO VOLTAR AO TOPO FLUIDO
-   ========================================================== */
 .btn-topo {
   display: inline-flex;
   align-items: center;
@@ -223,9 +204,6 @@ button[type="submit"]:active {
   transform: translateY(-3px);
 }
 
-/* ==========================================================
-   RODAPÉ
-   ========================================================== */
 footer {
   background-color: var(--card-bg);
   text-align: center;
@@ -236,7 +214,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsividade para celulares */
 @media (max-width: 600px) {
   header {
     flex-direction: column;
