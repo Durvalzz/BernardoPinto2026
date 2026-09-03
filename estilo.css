@@ -148,6 +148,7 @@ input, select, textarea {
   color: var(--text-color);
   font-size: 1rem;
   transition: var(--transition-fast);
+  textarea-resize: none;
 }
 
 input:focus, select:focus, textarea:focus {
